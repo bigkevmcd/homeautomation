@@ -7,12 +7,13 @@
     "url": ""
   },
   "dependencies": {
-	"coffee-script":"*",
-	"zmq":"*"
-	},
-  "devDependencies": {},
-  "optionalDependencies": {},
-  "engines": {
-    "node": "*"
+    "coffee-script": "*",
+    "serialport": "*",
+    "zmq": "*",
+    "nconf": "*",
+    "underscore": "*"
+  },
+  "scripts": {
+    "start": "./node_modules/.bin/coffee broker.coffee"
   }
 }

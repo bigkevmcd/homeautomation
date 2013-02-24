@@ -7,15 +7,10 @@
     "coffee-script": "*",
     "serialport": "*",
     "zmq": "*",
-    "nconf": "*",
-    "underscore": "*"
-  },
-  "devDependencies": {
-    "nodeunit": "*",
-    "sinon": "*"
+    "nconf": "~0.6.7",
+    "underscore": "~1.4.4"
   },
   "scripts": {
-    "start": "./node_modules/.bin/coffee run.coffee",
-    "test": "./node_modules/.bin/nodeunit test"
+    "start": "./node_modules/.bin/coffee lighting-relay.coffee"
   }
 }

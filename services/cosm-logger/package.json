@@ -1,0 +1,20 @@
+{
+  "author": "Kevin McDermott <bigkevmcd@gmail.com>",
+  "name": "cosm-logger",
+  "description": "ØMQ <=> COSM data logger",
+  "version": "0.0.1",
+  "repository": {
+    "url": ""
+  },
+  "dependencies": {
+    "coffee-script": "*",
+    "serialport": "*",
+    "zmq": "*",
+    "nconf": "*",
+    "underscore": "*",
+    "cosm": "*"
+  },
+  "scripts": {
+    "start": "./node_modules/.bin/coffee run.coffee"
+  }
+}

@@ -26,11 +26,9 @@ input.on 'message', (data) ->
 		jdata = JSON.parse data
 		if not jdata.event?
 			jdata.event = "unknown"
-
 		strData = JSON.stringify jdata
 		console.log "Relaying packet of type: #{jdata.event} >> #{strData}"
 		output.send [jdata.event, strData]
-
 	catch error
 		console.log "Invalid data: #{error}"
 		console.log data.toString()
@@ -38,13 +36,3 @@ input.on 'message', (data) ->
 process.on 'SIGINT', () ->
 	input.close()
 	output.close()
-
-
-
-
-
-
-
-
-
-
