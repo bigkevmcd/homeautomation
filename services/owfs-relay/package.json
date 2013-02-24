@@ -1,21 +1,23 @@
 {
   "author": "Kevin McDermott <bigkevmcd@gmail.com>",
-  "name": "lighting-relay",
-  "description": "ØMQ <=> lighting relay - used to read light sensors",
+  "name": "owfs-relay",
+  "description": "ØMQ <=> OWFS",
   "version": "0.0.1",
   "dependencies": {
     "coffee-script": "*",
-    "serialport": "*",
     "zmq": "*",
     "nconf": "*",
     "underscore": "*"
   },
   "devDependencies": {
     "nodeunit": "*",
-    "sinon": "*"
+    "sinon": "*",
+    "temp": "*",
+    "jasmine-node": "*"
   },
   "scripts": {
     "start": "./node_modules/.bin/coffee run.coffee",
-    "test": "./node_modules/.bin/nodeunit test"
+    "test": "./node_modules/.bin/jasmine-node --coffee test",
+    "watch": "./node_modules/.bin/jasmine-node --coffee --autotest ."
   }
 }
