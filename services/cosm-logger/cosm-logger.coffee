@@ -20,6 +20,7 @@ class CosmLogger extends EventEmitter
     @process = @options.process ?= process
     @process.on 'SIGINT', () =>
       @close()
+
   close: () =>
     if @bus then @bus.close()
 
@@ -38,7 +39,7 @@ class CosmLogger extends EventEmitter
       id: stream
     )
     stream.addPoint value, timestamp, (err, response, body) ->
-      console.log "Received #{err} #{response.statusCode}"
+      console.log "Received #{err}"
 
   handleEvent: (data) ->
     timestamp = new Date(data.timestamp)
