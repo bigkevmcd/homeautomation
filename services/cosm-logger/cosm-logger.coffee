@@ -4,8 +4,8 @@ cosm = require 'cosm'
 
 util = require 'util'
 
-feedId = <insert feedId>
-apiKey = '<insert API Key>'
+feedId = 106651
+apiKey = 'WyH2xftcopAr8D8uAu24-x7ZlTiSAKxwSjNKS2RyTUtNMD0g'
 
 lightingMapping =
     1: 'familyroom-light'
@@ -14,13 +14,12 @@ temperatureMapping =
     '28.645C18040000': 'office-temp'
 
 class CosmLogger extends EventEmitter
-
+    
   constructor: (@options = {}) ->
     @console = @options.console ?= console
     @process = @options.process ?= process
     @process.on 'SIGINT', () =>
       @close()
-
   close: () =>
     if @bus then @bus.close()
 
@@ -38,8 +37,11 @@ class CosmLogger extends EventEmitter
     stream = new cosm.Datastream(client, feed,
       id: stream
     )
-    stream.addPoint value, timestamp, (err, response, body) ->
-      console.log "Received #{err}"
+    stream.addPoint value, timestamp, (err, response, body) =>
+      if err?
+        @console.log "Received #{err}"
+      else
+        @console.log "Statuscode #{response.statusCode}"
 
   handleEvent: (data) ->
     timestamp = new Date(data.timestamp)
